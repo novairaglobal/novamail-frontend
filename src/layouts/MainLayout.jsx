@@ -1,28 +1,35 @@
 import Sidebar from "../components/Sidebar"
 import Topbar from "../components/Topbar"
-import MailPreview from "../components/MailPreview"
 
 export default function MainLayout({ children }) {
+
   return (
-    <div className="flex h-screen bg-[#0f172a] text-white">
-      
+
+    <div className="flex h-screen bg-[#0b1120] text-white overflow-hidden">
+
+      {/* SIDEBAR */}
+
       <Sidebar />
 
-      <div className="flex-1 flex flex-col">
-        
+      {/* RIGHT SIDE */}
+
+      <div className="flex-1 flex flex-col overflow-hidden">
+
+        {/* TOPBAR */}
+
         <Topbar />
 
-        <div className="flex flex-1 overflow-hidden">
+        {/* PAGE CONTENT */}
 
-        <div className="flex-1 overflow-auto p-4">
-            {children}
-        </div>
+        <main className="flex-1 overflow-hidden">
 
-        <MailPreview />
+          {children}
 
-        </div>
+        </main>
 
       </div>
+
     </div>
+
   )
 }

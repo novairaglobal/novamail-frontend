@@ -6,29 +6,60 @@ import {
 import MainLayout from "./layouts/MainLayout"
 
 import Inbox from "./pages/Inbox"
+import MailDetails from "./pages/MailDetails"
+
 import Sent from "./pages/Sent"
 import Drafts from "./pages/Drafts"
 import Spam from "./pages/Spam"
 import Trash from "./pages/Trash"
 
 export default function App() {
+
   return (
+
     <MainLayout>
 
       <Routes>
 
-        <Route path="/" element={<Inbox />} />
+        {/* INBOX */}
 
-        <Route path="/sent" element={<Sent />} />
+        <Route
+          path="/"
+          element={<Inbox />}
+        />
 
-        <Route path="/drafts" element={<Drafts />} />
+        {/* MAIL DETAILS */}
 
-        <Route path="/spam" element={<Spam />} />
+        <Route
+          path="/mail/:id"
+          element={<MailDetails />}
+        />
 
-        <Route path="/trash" element={<Trash />} />
+        {/* OTHER PAGES */}
+
+        <Route
+          path="/sent"
+          element={<Sent />}
+        />
+
+        <Route
+          path="/drafts"
+          element={<Drafts />}
+        />
+
+        <Route
+          path="/spam"
+          element={<Spam />}
+        />
+
+        <Route
+          path="/trash"
+          element={<Trash />}
+        />
 
       </Routes>
 
     </MainLayout>
+
   )
 }

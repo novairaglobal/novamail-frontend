@@ -1,16 +1,43 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from "react"
+import ReactDOM from "react-dom/client"
+
 import {
-  BrowserRouter
+  BrowserRouter,
+  Routes,
+  Route
 } from "react-router-dom"
 
-import App from './App'
-import './index.css'
+import "./index.css"
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+import App from "./App"
+
+import Inbox from "./pages/Inbox"
+
+import MailDetails from "./pages/MailDetails"
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+
   <React.StrictMode>
+
     <BrowserRouter>
-      <App />
+
+      <Routes>
+
+        <Route path="/" element={<App />}>
+
+          <Route index element={<Inbox />} />
+
+          <Route
+            path="/mail/:id"
+            element={<MailDetails />}
+          />
+
+        </Route>
+
+      </Routes>
+
     </BrowserRouter>
-  </React.StrictMode>,
+
+  </React.StrictMode>
+
 )
