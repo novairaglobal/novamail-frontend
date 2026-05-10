@@ -28,7 +28,7 @@ export default function ComposeModal({
       setSending(true)
 
       await axios.post(
-        "https://novamail-backend.vercel.app/send-email",
+        "https://novamail-backend.onrender.com/send-email",
         {
           to,
           subject,

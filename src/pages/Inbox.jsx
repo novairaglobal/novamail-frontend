@@ -26,7 +26,7 @@ export default function Inbox() {
     try {
 
       const response = await axios.get(
-        "https://novamail-backend.vercel.app/inbox"
+        "https://novamail-backend.onrender.com/inbox"
       )
 
       setMails(response.data.data.data)
